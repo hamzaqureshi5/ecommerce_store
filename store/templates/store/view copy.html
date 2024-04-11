@@ -1,0 +1,88 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #cssportal-grid {
+display: grid;
+grid-template-rows: 80px 1fr 0.5fr;
+grid-template-columns: 50% 1fr;
+gap: 12px 10px;
+align-content: center;
+width: 100vw;
+height: 100vh;
+}
+#header {
+grid-area: 1 / 1 / 2 / 4;
+background-color: rgba(121, 174, 225, 0.5);
+align-self: center;
+}
+#footer {
+grid-area: 3 / 1 / 4 / 4;
+background-color: rgba(119, 253, 221, 0.5);
+}
+#div1 {
+grid-area: 2 / 2 / 3 / 2;
+background-color: rgba(192,58,87, 0.5);
+}
+#image {
+grid-area: 2 / 1 / 3 / 2;
+background-color: rgba(151, 165, 111, 0.5);
+}
+#image img{
+width: 100%;
+height: 100%;
+}
+.testbutton {
+font-family: arial;
+color: #00000099 !important;
+font-size: 19px;
+/* text-shadow: 1px 1px 0px #7CACDE;
+box-shadow: 1px 1px 1px #BEE2F9; */
+padding: 10px 15px;
+border-radius: 0px;
+border: none;
+background: #ffffff;
+background-color: white;
+}
+.testbutton:hover {
+color: white !important;
+background-color: rgba(0, 0, 0, 0.348);
+}
+#buttons {
+display: grid;
+grid-template-rows: 1fr;
+grid-template-columns: repeat(2, 1fr);
+
+gap: 10px;
+width: 50%;
+height: 10%;
+}
+#col1 {
+grid-area: 1 / 1 / 2 / 2;
+background-color: rgba(95, 21, 141, 0.5);
+}
+#col2 {
+grid-area: 1 / 2 / 2 / 3;
+background-color: rgba(253, 69, 11, 0.5);
+}
+</style>
+<div id="cssportal-grid">
+    <div id="header"><button class="btn" >back</button></div>
+    <div id="footer"><ul>
+        <h3>Discription</h3>
+        <li>new </li>
+        <li>great</li>
+    </ul></div>
+    <div id="div1"><h2></h2>
+    <div class="qantity"></div>
+    <h3></h3>
+    <div id="buttons">
+        <button id="col1">Buy Now</button>
+        <button id="col2">Add to cart</button>
+    </div>
+    </div>
+    <div id="image"><img src="shoes.jpg" alt=""></div>
+</div>
+
+{% endblock content %}

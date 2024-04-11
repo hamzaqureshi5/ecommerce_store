@@ -8,6 +8,7 @@ import datetime
 # Create your views here.
 
 
+
 def store(request):
 #	if request.user.is_authenticated():
 	customer = request.user.customer
@@ -23,6 +24,16 @@ def store(request):
 	context = {'products':products, 'cartItems':cartitems}
 	return render(request, 'store/store.html', context)
 
+
+def view(request):
+	customer = request.user.customer
+	order, created = Order.objects.get_or_create(customer=customer, complete= False)
+	items = order.orderitem_set.all()
+	cartitems = order.get_cart_items
+
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartitems}
+	return render(request, 'store/view.html', context)
 
 def cart(request):
 #	if request.user.is_authenticated():
